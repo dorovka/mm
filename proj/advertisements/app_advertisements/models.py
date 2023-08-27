@@ -12,7 +12,7 @@ class Advertisement(models.Model):
     descriptions = models.TextField('описание')
     price = models.DecimalField('цена', max_digits=9, decimal_places=2)
     trades = models.BooleanField('Торг', help_text='Если хотим торговаться')
-    date_now = models.DateTimeField('Создание дата', auto_now_add= True)
+    date_now = models.DateTimeField('Создание дата', auto_now_add= True, null=False, blank=False)
     date_update = models.DateField("Обновление дата", auto_now= True) 
     def __str__(self): 
         return f'<Advertisement: Advertisement(id={self.id}, title={self.title}, price={self.price})>'
